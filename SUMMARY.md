@@ -1,6 +1,18 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Intro](README.md)
+* [OWASP](owasp/README.md)
+  * [INFO](owasp/info.md)
+  * [CONFIG](owasp/config.md)
+  * [IDENT](owasp/ident.md)
+  * [AUTHN](owasp/authn.md)
+  * [AUTHZ](owasp/authz.md)
+  * [SESS](owasp/sess.md)
+  * [INPVAL](owasp/inpval.md)
+  * [ERR](owasp/err.md)
+  * [CRYPST](owasp/crypst.md)
+  * [BUSLOGIC](owasp/buslogic.md)
+  * [CLIENT](owasp/client.md)
 
 ## Exploit-DB
 
