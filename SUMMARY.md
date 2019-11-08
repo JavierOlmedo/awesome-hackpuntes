@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Intro](README.md)
-* [OWASP](owasp/README.md)
+* [My Web Penetration Testing Guide](owasp/README.md)
   * [INFO](owasp/info/README.md)
     * [INFO-001](owasp/info/info-001.md)
     * [INFO-002](owasp/info/info-002.md)
@@ -22,13 +22,9 @@
   * [CRYPST](owasp/crypst.md)
   * [BUSLOGIC](owasp/buslogic.md)
   * [CLIENT](owasp/client.md)
-
-## Exploit-DB
-
-* [IObit Uninstaller 9.1.0.8 - 'IObitUnSvr' Unquoted Service Path](exploit-db/iobit-uninstaller-9.1.0.8-iobitunsvr-unquoted-service-path.md)
-* [winrar 5.80 64bit - Denial of Service](exploit-db/winrar-5.80-64bit-denial-of-service.md)
-
-## TOOLS
-
-* [Gobuster](tools/gobuster.md)
+* [Exploit-DB](exploit-db/README.md)
+  * [winrar 5.80 64bit - Denial of Service](exploit-db/winrar-5.80-64bit-denial-of-service.md)
+  * [IObit Uninstaller 9.1.0.8 - 'IObitUnSvr' Unquoted Service Path](exploit-db/iobit-uninstaller-9.1.0.8-iobitunsvr-unquoted-service-path.md)
+* [Tools](tools/README.md)
+  * [Gobuster](tools/gobuster.md)
 
