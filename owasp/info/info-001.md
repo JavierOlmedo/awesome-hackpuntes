@@ -4,5 +4,17 @@ description: Conduct search engine discovery/reconnaissance for information leak
 
 # INFO-001
 
-t
+### Objetive
+
+Find information about the application in search engines and social networks.
+
+### How to test
+
+
+
+### 
+
+
+
+### References
 

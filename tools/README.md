@@ -1,4 +1,4 @@
-# Tools
+# Tools and commands
 
 TOOLS
 
