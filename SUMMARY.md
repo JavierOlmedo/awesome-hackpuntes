@@ -24,6 +24,7 @@
   * [CLIENT](owasp/client.md)
 * [Exploit-DB](exploit-db/README.md)
   * [winrar 5.80 64bit - Denial of Service](exploit-db/winrar-5.80-64bit-denial-of-service.md)
+  * [rConfig 3.9.2 - Remote Code Execution](exploit-db/rconfig-3.9.2-remote-code-execution.md)
   * [XML Notepad 2.8.0.4 - XML External Entity Injection](exploit-db/xml-notepad-2.8.0.4-xml-external-entity-injection.md)
   * [IObit Uninstaller 9.1.0.8 - 'IObitUnSvr' Unquoted Service Path](exploit-db/iobit-uninstaller-9.1.0.8-iobitunsvr-unquoted-service-path.md)
 * [Tools and commands](tools/README.md)
