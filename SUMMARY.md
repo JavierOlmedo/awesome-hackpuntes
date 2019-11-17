@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Intro](README.md)
-* [My CVE](my-cve.md)
 * [My Web Penetration Testing Guide](owasp/README.md)
   * [INFO](owasp/info/README.md)
     * [INFO-001](owasp/info/info-001.md)
@@ -23,6 +22,7 @@
   * [CRYPST](owasp/crypst.md)
   * [BUSLOGIC](owasp/buslogic.md)
   * [CLIENT](owasp/client.md)
+* [My CVE](my-cve.md)
 * [Exploit-DB](exploit-db/README.md)
   * [winrar 5.80 64bit - Denial of Service](exploit-db/winrar-5.80-64bit-denial-of-service.md)
   * [rConfig 3.9.2 - Remote Code Execution](exploit-db/rconfig-3.9.2-remote-code-execution.md)
