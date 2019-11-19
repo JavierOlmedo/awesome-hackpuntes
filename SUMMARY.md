@@ -24,6 +24,8 @@
   * [CLIENT](owasp/client.md)
 * [My CVE](my-cve.md)
 * [Exploit-DB](exploit-db/README.md)
+  * [XMLBlueprint &lt;= 16.191112 - XML External Entity Injection](exploit-db/xmlblueprint-less-than-16.191112-xml-external-entity-injection.md)
+  * [Easy XML Editor &lt;= 1.7.8 - XML External Entity Injection](exploit-db/easy-xml-editor-less-than-1.7.8-xml-external-entity-injection.md)
   * [winrar 5.80 64bit - Denial of Service](exploit-db/winrar-5.80-64bit-denial-of-service.md)
   * [rConfig 3.9.2 - Remote Code Execution](exploit-db/rconfig-3.9.2-remote-code-execution.md)
   * [XML Notepad 2.8.0.4 - XML External Entity Injection](exploit-db/xml-notepad-2.8.0.4-xml-external-entity-injection.md)
