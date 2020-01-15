@@ -1,8 +1,12 @@
-# OWASP Test Check - ES
+---
+description: Listado de pruebas de OWASP
+---
 
-{% file src="../.gitbook/assets/owasp\_test\_check\_es.pdf" caption="Download OWASP Test Check" %}
+# OWASP Comprobación Pruebas
 
-**\[INFO\] RECOPILACIÓN DE INFORMACIÓN**
+{% file src="../.gitbook/assets/owasp\_comprobacion\_pruebas.pdf" caption="Descargar OWASP Comprobación Pruebas" %}
+
+### \[INFO\] RECOPILACIÓN DE INFORMACIÓN
 
 * [ ] INFO-001 Fugas de información indexadas por buscadores
 * [ ] INFO-002 Fingerprinting del servidor web
@@ -15,7 +19,7 @@
 * [ ] INFO-009 Fingerprinting de la aplicación web
 * [ ] INFO-010 Mapa de arquitectura de la aplicación
 
-**\[CONFIG\] GESTIÓN DE CONFIGURACIÓN E IMPLEMENTACIÓN**
+### \[CONFIG\] GESTIÓN DE CONFIGURACIÓN E IMPLEMENTACIÓN
 
 * [ ] CONFIG-001 Configuración de infraestructura/red
 * [ ] CONFIG-002 Configuración de la plataforma de la aplicación
@@ -27,7 +31,7 @@
 * [ ] CONFIG-008 Política de dominio cruzado RIA
 * [ ] CONFIG-009 Permisos de archivos
 
-**\[IDENT\] GESTIÓN DE IDENTIDADES**
+### \[IDENT\] GESTIÓN DE IDENTIDADES
 
 * [ ] IDENT-001 Definición de roles
 * [ ] IDENT-002 Proceso de registro
@@ -35,7 +39,7 @@
 * [ ] IDENT-004 Enumeración de cuentas de usuario
 * [ ] IDENT-005 Política de nombres de usuario débil
 
-**\[AUTHN\] AUTENTICACIÓN**
+### \[AUTHN\] AUTENTICACIÓN
 
 * [ ] AUTHN-001 Transporte de credenciales por canales cifrados
 * [ ] AUTHN-002 Uso de credenciales por defecto
@@ -48,14 +52,14 @@
 * [ ] AUTHN-009 Debilidades en las funcionalidades de cambio y reseteo de contraseñas
 * [ ] AUTHN-010 Canales alternativos de autenticación
 
-**\[AUTHZ\] AUTORIZACIÓN**
+### \[AUTHZ\] AUTORIZACIÓN
 
 * [ ] AUTHZ-001 Política de contraseñas débiles
 * [ ] AUTHZ-002 Fallos en el control de acceso a recursos y funcionalidades
 * [ ] AUTHZ-003 Escalado de privilegios
 * [ ] AUTHZ-004 Referencias directas inseguras a objetos
 
-**\[SESS\] GESTIÓN DE SESIONES**
+### \[SESS\] GESTIÓN DE SESIONES\*\*
 
 * [ ] SESS-001 Fallos en el sistema de manejo de sesiones
 * [ ] SESS-002 Atributos de las cookies
@@ -66,7 +70,7 @@
 * [ ] SESS-007 Sistema de timeout \(caducidad\) de la sesión
 * [ ] SESS-008 Sobrecarga de variables de sesión \(Session Puzzling\)
 
-**\[INPVAL\] VALIDACIÓN DE ENTRADA**
+### \[INPVAL\] VALIDACIÓN DE ENTRADA
 
 * [ ] INPVAL-001 Cross Site Scripting reflejado
 * [ ] INPVAL-002 Cross Site Scripting almacenado
@@ -86,19 +90,19 @@
 * [ ] INPVAL-016 HTTP Splitting/Smuggling
 * [ ] INPVAL-017 HTTP solicitudes entrantes
 
-**\[ERR\] MANEJO DE ERRORES**
+### \[ERR\] MANEJO DE ERRORES
 
 * [ ] ERR-001 Análisis de códigos de error
 * [ ] ERR-002 Análisis de trazas de error
 
-**\[CRYPST\] CRIPTOGRAFÍA**
+### \[CRYPST\] CRIPTOGRAFÍA
 
 * [ ] CRYPST-001 Confidencialidad de la información en tránsito
 * [ ] CRYPST-002 Padding Oracle
 * [ ] CRYPST-003 Envío de información sensible por canales sin cifrar
 * [ ] CRYPST-004 Cifrado débil
 
-**\[BUSLOGIC\] LÓGICA DE NEGOCIO**
+### \[BUSLOGIC\] LÓGICA DE NEGOCIO
 
 * [ ] BUSLOGIC-001 Validación de datos de la lógica del negocio   
 * [ ] BUSLOGIC-002 Habilidad de manipulación consultas
@@ -110,7 +114,7 @@
 * [ ] BUSLOGIC-008 Subida de tipos de archivos inesperados
 * [ ] BUSLOGIC-009 Subida de archivos maliciosos
 
-**\[CLIENT\] PRUEBAS DEL LADO DEL CLIENTE**
+### \[CLIENT\] PRUEBAS DEL LADO DEL CLIENTE
 
 * [ ] CLIENT-001 Cross Site Scripting basado en DOM
 * [ ] CLIENT-002 Ejecución de JavaScript
