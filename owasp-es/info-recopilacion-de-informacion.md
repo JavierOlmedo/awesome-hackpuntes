@@ -37,7 +37,7 @@ Buscar información sobre el servidor web, principalmente intentaremos conocer l
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Fingerprint\_Web\_Server\_\(OTG-INFO-002](https://www.owasp.org/index.php/Fingerprint_Web_Server_%28OTG-INFO-002)\)
+* [https://www.owasp.org/index.php/Fingerprint\_Web\_Server\_\(OTG-INFO-002\)](https://www.owasp.org/index.php/Fingerprint_Web_Server_%28OTG-INFO-002%29)
 
 ### INFO-003 Fugas de información sensible en metaficheros del servidor
 
@@ -52,7 +52,7 @@ Buscar archivos o directorios que puedan contener información interesante o sen
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Review\_Webserver\_Metafiles\_for\_Information\_Leakage\_\(OTG-INFO-003](https://www.owasp.org/index.php/Review_Webserver_Metafiles_for_Information_Leakage_%28OTG-INFO-003)\)
+* [https://www.owasp.org/index.php/Review\_Webserver\_Metafiles\_for\_Information\_Leakage\_\(OTG-INFO-003\)](https://www.owasp.org/index.php/Review_Webserver_Metafiles_for_Information_Leakage_%28OTG-INFO-003%29)
 
 ### INFO-004 Enumeración de aplicaciones en el servidor web
 
@@ -69,7 +69,7 @@ Enumerar las aplicaciones dentro del alcance de la auditoría y presentes en el 
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Enumerate\_Applications\_on\_Webserver\_\(OTG-INFO-004](https://www.owasp.org/index.php/Enumerate_Applications_on_Webserver_%28OTG-INFO-004)\)
+* [https://www.owasp.org/index.php/Enumerate\_Applications\_on\_Webserver\_\(OTG-INFO-004\)](https://www.owasp.org/index.php/Enumerate_Applications_on_Webserver_%28OTG-INFO-004%29)
 
 ### INFO-005 Fugas de información sensible en metadatos y comentarios
 
@@ -85,7 +85,7 @@ Buscar fugas de información en comentarios HTML y metadatos de archivos subidos
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Review\_webpage\_comments\_and\_metadata\_for\_information\_leakage\_\(OTG-INFO-005](https://www.owasp.org/index.php/Review_webpage_comments_and_metadata_for_information_leakage_%28OTG-INFO-005)\)
+* [https://www.owasp.org/index.php/Review\_webpage\_comments\_and\_metadata\_for\_information\_leakage\_\(OTG-INFO-005\)](https://www.owasp.org/index.php/Review_webpage_comments_and_metadata_for_information_leakage_%28OTG-INFO-005%29)
 
 ### INFO-006 Identificación de puntos de entrada en la aplicación
 
@@ -103,7 +103,7 @@ Comprender como se forman las peticiones y respuestas de la aplicación y buscar
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Identify\_application\_entry\_points\_\(OTG-INFO-006](https://www.owasp.org/index.php/Identify_application_entry_points_%28OTG-INFO-006)\)
+* [https://www.owasp.org/index.php/Identify\_application\_entry\_points\_\(OTG-INFO-006\)](https://www.owasp.org/index.php/Identify_application_entry_points_%28OTG-INFO-006%29)
 
 ### INFO-007 Mapas de rutas de ejecución a través de la aplicación
 
@@ -117,7 +117,7 @@ Crear un mapa de la aplicación y entender los flujos de trabajo.
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Map\_execution\_paths\_through\_application\_\(OTG-INFO-007](https://www.owasp.org/index.php/Map_execution_paths_through_application_%28OTG-INFO-007)\)
+* [https://www.owasp.org/index.php/Map\_execution\_paths\_through\_application\_\(OTG-INFO-007\)](https://www.owasp.org/index.php/Map_execution_paths_through_application_%28OTG-INFO-007%29)
 
 ### INFO-008 Fingerprinting del framework de la aplicación web
 
@@ -131,7 +131,7 @@ Conocer los distintos frameworks usados por la aplicación.
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Fingerprint\_Web\_Application\_Framework\_\(OTG-INFO-008](https://www.owasp.org/index.php/Fingerprint_Web_Application_Framework_%28OTG-INFO-008)\)
+* [https://www.owasp.org/index.php/Fingerprint\_Web\_Application\_Framework\_\(OTG-INFO-008\)](https://www.owasp.org/index.php/Fingerprint_Web_Application_Framework_%28OTG-INFO-008%29)
 
 ### INFO-009 Fingerprinting de la aplicación web
 
@@ -149,7 +149,7 @@ Identificar las versiones de los frameworks, servidor web, tecnologías o librer
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Fingerprint\_Web\_Application\_\(OTG-INFO-009](https://www.owasp.org/index.php/Fingerprint_Web_Application_%28OTG-INFO-009)\)
+* [https://www.owasp.org/index.php/Fingerprint\_Web\_Application\_\(OTG-INFO-009\)](https://www.owasp.org/index.php/Fingerprint_Web_Application_%28OTG-INFO-009%29)
 
 ### INFO-010 Mapa de arquitectura de la aplicación
 
@@ -167,5 +167,5 @@ Conocer la infraestructura de la aplicación.
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Map\_Application\_Architecture\_\(OTG-INFO-010](https://www.owasp.org/index.php/Map_Application_Architecture_%28OTG-INFO-010)\)
+* [https://www.owasp.org/index.php/Map\_Application\_Architecture\_\(OTG-INFO-010\)](https://www.owasp.org/index.php/Map_Application_Architecture_%28OTG-INFO-010%29)
 
