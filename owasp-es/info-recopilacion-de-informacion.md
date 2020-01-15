@@ -18,7 +18,7 @@ Buscar información sobre la aplicación en motores de búsqueda y redes sociale
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Conduct\_search\_engine\_discovery/reconnaissance\_for\_information\_leakage\_\(OTG-INFO-001](https://www.owasp.org/index.php/Conduct_search_engine_discovery/reconnaissance_for_information_leakage_%28OTG-INFO-001)\)
+* [https://www.owasp.org/index.php/Conduct\_search\_engine\_discovery/reconnaissance\_for\_information\_leakage\_\(OTG-INFO-001\)](https://www.owasp.org/index.php/Conduct_search_engine_discovery/reconnaissance_for_information_leakage_%28OTG-INFO-001%29)
 * [https://fortinux.gitbooks.io/humble\_tips/usando\_la\_linea\_de\_comandos/tutorial\_usar\_grep\_para\_buscar\_texto\_dentro\_de\_archivos\_en\_gnulinux.html](https://fortinux.gitbooks.io/humble_tips/usando_la_linea_de_comandos/tutorial_usar_grep_para_buscar_texto_dentro_de_archivos_en_gnulinux.html)
 
 ### INFO-002 Fingerprinting del servidor web
