@@ -13,13 +13,36 @@ Buscar información sobre la aplicación en motores de búsqueda y redes sociale
 📝 **Pruebas**
 
 * [ ] Buscar información sobre la aplicación en Google, Bing, GitHub, Shodan, Censys, Pastebin, Hunter, LinkedIn, Facebook y Twitter.
+
+**Google**
+
+```text
+site:[DOMAIN]
+cache:[DOMAIN]
+filetype:[EXTENSION]
+inurl:[DORK]
+intext:[DORK]
+inbody:[DORK]
+intitle:[DORK]
+```
+
+**Archive**
+
+```text
+https://web.archive.org/web/*/[DOMAIN]/*
+```
+
 * [ ] Comprobar fugas de información en leaks.
 * [ ] Lanzar waybackurls.
 
+```text
+waybackurls [DOMAIN] | tee -a [DOMAIN].txt
+```
+
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Conduct\_search\_engine\_discovery/reconnaissance\_for\_information\_leakage\_\(OTG-INFO-001\)](https://www.owasp.org/index.php/Conduct_search_engine_discovery/reconnaissance_for_information_leakage_%28OTG-INFO-001%29)
-* [https://fortinux.gitbooks.io/humble\_tips/usando\_la\_linea\_de\_comandos/tutorial\_usar\_grep\_para\_buscar\_texto\_dentro\_de\_archivos\_en\_gnulinux.html](https://fortinux.gitbooks.io/humble_tips/usando_la_linea_de_comandos/tutorial_usar_grep_para_buscar_texto_dentro_de_archivos_en_gnulinux.html)
+* [OWASP GitHub INFO-001](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.1_Conduct_Search_Engine_Discovery_Reconnaissance_for_Information_Leakage_OTG-INFO-001.md)
+* [Google Hacking Database/](https://www.exploit-db.com/google-hacking-database/)
 
 ### INFO-002 Fingerprinting del servidor web
 
@@ -33,11 +56,26 @@ Buscar información sobre el servidor web, principalmente intentaremos conocer l
 * [ ] Analizar el código HTML.
 * [ ] Observar las cookies.
 * [ ] Lanzar Wappalyzer.
+
+```text
+wappalyzer [DOMAIN] --recursive=1 > [DOMAIN].json
+```
+
 * [ ] Lanzar Whatweb.
+
+```text
+whatweb [DOMAIN]
+```
+
+* [ ] Lanzar Nmap
+
+```text
+nmap -sC -sV -oA nmap/initial-scan -vvv -T3 -n [DOMAIN]
+```
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Fingerprint\_Web\_Server\_\(OTG-INFO-002\)](https://www.owasp.org/index.php/Fingerprint_Web_Server_%28OTG-INFO-002%29)
+* [OWASP GitHub INFO-002](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.2_Fingerprint_Web_Server_OTG-INFO-002.md)
 
 ### INFO-003 Fugas de información sensible en metaficheros del servidor
 
@@ -47,12 +85,18 @@ Buscar archivos o directorios que puedan contener información interesante o sen
 
 📝 **Pruebas**
 
+* [ ] Comprobar el archivo `robots.txt`.
+
+```text
+wget [https://[DOMAIN]/robots.txt]
+```
+
 * [ ] Fuzz de directorios y archivos conocidos.
 * [ ] Observar el tag HTML `META`.
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Review\_Webserver\_Metafiles\_for\_Information\_Leakage\_\(OTG-INFO-003\)](https://www.owasp.org/index.php/Review_Webserver_Metafiles_for_Information_Leakage_%28OTG-INFO-003%29)
+* [OWASP GitHub INFO-003](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.3_Review_Webserver_Metafiles_for_Information_Leakage_OTG-INFO-003.md)
 
 ### INFO-004 Enumeración de aplicaciones en el servidor web
 
@@ -64,12 +108,17 @@ Enumerar las aplicaciones dentro del alcance de la auditoría y presentes en el 
 
 * [ ] Utilizar BING con el filtro `IP:`.
 * [ ] Enumeración de subdominios.
+
+```text
+[PENDIENTE]
+```
+
 * [ ] Comprobar en `http://ipv4info.com`.
 * [ ] Lanzar Nmap.
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Enumerate\_Applications\_on\_Webserver\_\(OTG-INFO-004\)](https://www.owasp.org/index.php/Enumerate_Applications_on_Webserver_%28OTG-INFO-004%29)
+* [OWASP GitHub INFO-004](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.4_Enumerate_Applications_on_Webserver_OTG-INFO-004.md)
 
 ### INFO-005 Fugas de información sensible en metadatos y comentarios
 
@@ -85,7 +134,7 @@ Buscar fugas de información en comentarios HTML y metadatos de archivos subidos
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Review\_webpage\_comments\_and\_metadata\_for\_information\_leakage\_\(OTG-INFO-005\)](https://www.owasp.org/index.php/Review_webpage_comments_and_metadata_for_information_leakage_%28OTG-INFO-005%29)
+* [OWASP GitHub INFO-005](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.5_Review_Webpage_Comments_and_Metadata_for_Information_Leakage_OTG-INFO-005.md)
 
 ### INFO-006 Identificación de puntos de entrada en la aplicación
 
@@ -103,7 +152,7 @@ Comprender como se forman las peticiones y respuestas de la aplicación y buscar
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Identify\_application\_entry\_points\_\(OTG-INFO-006\)](https://www.owasp.org/index.php/Identify_application_entry_points_%28OTG-INFO-006%29)
+* [OWASP GitHub INFO-006](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.6_Identify_Application_Entry_Points_OTG-INFO-006.md)
 
 ### INFO-007 Mapas de rutas de ejecución a través de la aplicación
 
@@ -117,7 +166,7 @@ Crear un mapa de la aplicación y entender los flujos de trabajo.
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Map\_execution\_paths\_through\_application\_\(OTG-INFO-007\)](https://www.owasp.org/index.php/Map_execution_paths_through_application_%28OTG-INFO-007%29)
+* [OWASP GitHub INFO-007](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.7_Map_Execution_Paths_Through_Application_OTG-INFO-007.md)
 
 ### INFO-008 Fingerprinting del framework de la aplicación web
 
@@ -131,7 +180,7 @@ Conocer los distintos frameworks usados por la aplicación.
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Fingerprint\_Web\_Application\_Framework\_\(OTG-INFO-008\)](https://www.owasp.org/index.php/Fingerprint_Web_Application_Framework_%28OTG-INFO-008%29)
+* [OWASP GitHub INFO-008](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.8_Fingerprint_Web_Application_Framework_OTG-INFO-008.md)
 
 ### INFO-009 Fingerprinting de la aplicación web
 
@@ -149,7 +198,7 @@ Identificar las versiones de los frameworks, servidor web, tecnologías o librer
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Fingerprint\_Web\_Application\_\(OTG-INFO-009\)](https://www.owasp.org/index.php/Fingerprint_Web_Application_%28OTG-INFO-009%29)
+* [OWASP GitHub INFO-009](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.9_Fingerprint_Web_Application_OTG-INFO-009.md)
 
 ### INFO-010 Mapa de arquitectura de la aplicación
 
@@ -167,5 +216,5 @@ Conocer la infraestructura de la aplicación.
 
 🌐 **Referencias**
 
-* [https://www.owasp.org/index.php/Map\_Application\_Architecture\_\(OTG-INFO-010\)](https://www.owasp.org/index.php/Map_Application_Architecture_%28OTG-INFO-010%29)
+* [OWASP GitHub INFO-010](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.10_Map_Application_Architecture_OTG-INFO-010.md)
 
