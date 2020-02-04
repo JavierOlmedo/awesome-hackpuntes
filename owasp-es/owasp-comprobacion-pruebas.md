@@ -4,7 +4,9 @@ description: Listado de pruebas de OWASP
 
 # OWASP Comprobación Pruebas
 
-{% file src="../.gitbook/assets/owasp\_comprobacion\_pruebas.pdf" caption="Descargar OWASP Comprobación Pruebas" %}
+
+
+♻️ **4 de febrero de 2020**
 
 ### \[INFO\] RECOPILACIÓN DE INFORMACIÓN
 
@@ -30,6 +32,7 @@ description: Listado de pruebas de OWASP
 * [ ] CONFIG-007 HTTP Strict Transport Security
 * [ ] CONFIG-008 Política de dominio cruzado RIA
 * [ ] CONFIG-009 Permisos de archivos
+* [ ] CONFIG-010 Toma de control de subdominio
 
 ### \[IDENT\] GESTIÓN DE IDENTIDADES
 
@@ -59,7 +62,7 @@ description: Listado de pruebas de OWASP
 * [ ] AUTHZ-003 Escalado de privilegios
 * [ ] AUTHZ-004 Referencias directas inseguras a objetos
 
-### \[SESS\] GESTIÓN DE SESIONES\*\*
+### \[SESS\] GESTIÓN DE SESIONES
 
 * [ ] SESS-001 Fallos en el sistema de manejo de sesiones
 * [ ] SESS-002 Atributos de las cookies
@@ -89,6 +92,8 @@ description: Listado de pruebas de OWASP
 * [ ] INPVAL-015 Vulnerabilidades incubadas
 * [ ] INPVAL-016 HTTP Splitting/Smuggling
 * [ ] INPVAL-017 HTTP solicitudes entrantes
+* [ ] INPVAL-018 Inyección en cabecera Host
+* [ ] INPVAL-019 Inyección de plantilla del lado del servidor \(SSTI\)
 
 ### \[ERR\] MANEJO DE ERRORES
 
@@ -128,4 +133,5 @@ description: Listado de pruebas de OWASP
 * [ ] CLIENT-010 WebSockets
 * [ ] CLIENT-011 Mensajería web
 * [ ] CLIENT-012 Almacenamiento local
+* [ ] CLIENT-013 Cross-Site Script Inclusion \(XSSI\)
 
