@@ -32,7 +32,7 @@
   * [IObit Uninstaller 9.1.0.8 - 'IObitUnSvr' Unquoted Service Path](exploit-db/iobit-uninstaller-9.1.0.8-iobitunsvr-unquoted-service-path.md)
 * [OWASP - ES](owasp-es/README.md)
   * [\[INFO\] RECOPILACIÓN DE INFORMACIÓN](owasp-es/info-recopilacion-de-informacion.md)
-  * [OWASP Comprobación Pruebas](owasp-es/owasp-comprobacion-pruebas.md)
+  * [OWASP: Guía de pruebas](owasp-es/owasp-comprobacion-pruebas.md)
 * [Tools and commands](tools/README.md)
   * [Gobuster](tools/gobuster.md)
 
