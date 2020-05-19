@@ -1,5 +1,7 @@
 ---
-description: Recopilar la mayor cantidad de información posible sobre la aplicación
+description: >-
+  Recopilar la mayor cantidad de información posible sobre la aplicación,
+  sistema u organización.
 ---
 
 # \[INFO\] RECOPILACIÓN DE INFORMACIÓN
@@ -64,11 +66,11 @@ https://binsearch.info/?q=[DOMAIN]
 * [OWASP GitHub INFO-01](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/01-Information_Gathering/01-Conduct_Search_Engine_Discovery_Reconnaissance_for_Information_Leakage.md)
 * [Google Hacking Database/](https://www.exploit-db.com/google-hacking-database/)
 
-### INFO-002 Fingerprinting del servidor web
+### INFO-02 Fingerprinting del servidor web
 
 🎯 **Objetivo**
 
-Buscar información sobre el servidor web, principalmente intentaremos conocer la versión y tipo para buscar posibles vulnerabilidades y exploits.
+Buscar información sobre el servidor web, principalmente intentar conocer la versión y tipo para buscar posibles vulnerabilidades y exploits.
 
 📝 **Pruebas**
 
@@ -78,6 +80,7 @@ Buscar información sobre el servidor web, principalmente intentaremos conocer l
 * [ ] Lanzar **Wappalyzer**.
 * [ ] Lanzar **Whatweb**.
 * [ ] Lanzar **Nmap**.
+* [ ] Lanzar **Netcraft**.
 
 **Wappalyzer**
 
@@ -101,11 +104,17 @@ nmap -p- --open -T2 -v -oA ports [DOMAIN]
 nmap -sC -sV -T2 -v -oA services -p[PORTS] [DOMAIN]
 ```
 
+**Netcraft**
+
+```text
+https://sitereport.netcraft.com/?url=[URL]
+```
+
 🌐 **Referencias**
 
 * [OWASP GitHub INFO-02](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/01-Information_Gathering/02-Fingerprint_Web_Server.md)
 
-### INFO-003 Fugas de información sensible en metaficheros del servidor
+### INFO-03 Fugas de información sensible en metaficheros del servidor
 
 🎯 **Objetivo**
 
@@ -114,13 +123,20 @@ Buscar archivos o directorios que puedan contener información interesante o sen
 📝 **Pruebas**
 
 * [ ] Comprobar el archivo `robots.txt`.
-
-```text
-wget [https://[DOMAIN]/robots.txt]
-```
-
 * [ ] Fuzz de directorios y archivos conocidos.
 * [ ] Observar el tag HTML `META`.
+
+**Wget**
+
+```text
+wget [URL]/robots.txt
+```
+
+**Curl**
+
+```text
+curl -O [URL]/robots.txt
+```
 
 🌐 **Referencias**
 
