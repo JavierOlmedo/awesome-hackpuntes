@@ -4,15 +4,20 @@ description: Recopilar la mayor cantidad de información posible sobre la aplica
 
 # \[INFO\] RECOPILACIÓN DE INFORMACIÓN
 
-### INFO-001 Fugas de información indexadas por buscadores
+### INFO-01 Fugas de información indexadas por buscadores
 
 🎯 **Objetivo**
 
-Buscar información sobre la aplicación en motores de búsqueda y redes sociales.
+Buscar información sensible sobre la aplicación, sistema u organización que pueda estar expuesta tanto directamente \(en el sitio web de la organización\) o indirectamente \(sitio web de un tercero\).
 
 📝 **Pruebas**
 
 * [ ] Buscar información sobre la aplicación en Google, Bing, GitHub, Shodan, Censys, Pastebin, Hunter, LinkedIn, Facebook y Twitter.
+* [ ] Comprobar fugas de información en leaks.
+* [ ] Lanzar **waybackurls**.
+* [ ] Comprobar emails en **hunter.io**.
+* [ ] Comprobar dominio en **shodan.io**.
+* [ ] Comprobar dominio en **binsearch.info**.
 
 **Google**
 
@@ -32,50 +37,73 @@ intitle:[DORK]
 https://web.archive.org/web/*/[DOMAIN]/*
 ```
 
-* [ ] Comprobar fugas de información en leaks.
-* [ ] Lanzar waybackurls.
-
 ```text
 waybackurls [DOMAIN] | tee -a [DOMAIN].txt
 ```
 
+**Hunter.io**
+
+```text
+https://hunter.io/search/[DOMAIN]
+```
+
+**Shodan.io**
+
+```text
+https://www.shodan.io/search?query=[DOMAIN]
+```
+
+**Binsearch.info**
+
+```text
+https://binsearch.info/?q=[DOMAIN]
+```
+
 🌐 **Referencias**
 
-* [OWASP GitHub INFO-001](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.1_Conduct_Search_Engine_Discovery_Reconnaissance_for_Information_Leakage_OTG-INFO-001.md)
+* [OWASP GitHub INFO-01](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/01-Information_Gathering/01-Conduct_Search_Engine_Discovery_Reconnaissance_for_Information_Leakage.md)
 * [Google Hacking Database/](https://www.exploit-db.com/google-hacking-database/)
 
 ### INFO-002 Fingerprinting del servidor web
 
 🎯 **Objetivo**
 
-Buscar información sobre el servidor web, principalmente intentaremos conocer la versión y tipo del servidor web para buscar posibles vulnerabilidades y exploits.
+Buscar información sobre el servidor web, principalmente intentaremos conocer la versión y tipo para buscar posibles vulnerabilidades y exploits.
 
 📝 **Pruebas**
 
 * [ ] Navegar por la aplicación y observar cabeceras.
 * [ ] Analizar el código HTML.
 * [ ] Observar las cookies.
-* [ ] Lanzar Wappalyzer.
+* [ ] Lanzar **Wappalyzer**.
+* [ ] Lanzar **Whatweb**.
+* [ ] Lanzar **Nmap**.
+
+**Wappalyzer**
 
 ```text
-wappalyzer [DOMAIN] --recursive=1 > [DOMAIN].json
+wappalyzer [URL] --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4135.1 Safari/537.36" --proxy "http://127.0.0.1:8080" --recursive --pretty >> [DOMAIN].json
 ```
 
-* [ ] Lanzar Whatweb.
+**Whatweb**
 
 ```text
-whatweb [DOMAIN]
+whatweb --aggression 4 --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4135.1 Safari/537.36" --proxy "127.0.0.1:8080" --url-prefix "https://" [DOMAIN]
 ```
 
-* [ ] Lanzar Nmap
+**Nmap**
 
 ```text
-nmap -sC -sV -oA nmap/initial-scan -vvv -T3 -n [DOMAIN]
+nmap -p- --open -T2 -v -oA ports [DOMAIN]
+```
+
+```text
+nmap -sC -sV -T2 -v -oA services -p[PORTS] [DOMAIN]
 ```
 
 🌐 **Referencias**
 
-* [OWASP GitHub INFO-002](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.2_Fingerprint_Web_Server_OTG-INFO-002.md)
+* [OWASP GitHub INFO-02](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/01-Information_Gathering/02-Fingerprint_Web_Server.md)
 
 ### INFO-003 Fugas de información sensible en metaficheros del servidor
 
