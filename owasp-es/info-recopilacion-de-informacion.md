@@ -219,7 +219,7 @@ python sublist3r.py -d [DOMAIN] -v -o sublister.txt
 
 * [OWASP GitHub INFO-04](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/01-Information_Gathering/04-Enumerate_Applications_on_Webserver.md)
 
-### INFO-005 Fugas de información sensible en metadatos y comentarios
+### INFO-05 Fugas de información sensible en metadatos y comentarios
 
 🎯 **Objetivo**
 
@@ -227,19 +227,23 @@ Buscar fugas de información en comentarios HTML y metadatos de archivos subidos
 
 📝 **Pruebas**
 
-* [ ] Revisar código HTML.
-* [ ] Extraer y analizar los metadatos de los archivos accesibles subidos al servidor con FOCA.
-* [ ] Plugin Burp Suite: `Exiftool`.
+* [ ] Una vez explorada la aplicación mediante **Burp Suite**, exportar los comentarios desde la pestaña `Target -> Site map -> Engagement tools -> Find comments`.
+* [ ] Plugin para Burp Suite: [Exiftool Scanner](https://github.com/portswigger/exiftool-scanner).
+* [ ] Almacenar los archivos obtenidos y descargados durante la auditoria para analizarlos con **FOCA**.
+
+**Burp Suite**
+
+![](../.gitbook/assets/info-05_001.png)
 
 🌐 **Referencias**
 
-* [OWASP GitHub INFO-005](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.5_Review_Webpage_Comments_and_Metadata_for_Information_Leakage_OTG-INFO-005.md)
+* [OWASP GitHub INFO-05](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/01-Information_Gathering/05-Review_Webpage_Content_for_Information_Leakage.md)
 
-### INFO-006 Identificación de puntos de entrada en la aplicación
+### INFO-06 Identificación de puntos de entrada en la aplicación
 
 🎯 **Objetivo**
 
-Comprender como se forman las peticiones y respuestas de la aplicación y buscar puntos de entrada.
+Comprender como se forman las peticiones y respuestas de la aplicación, buscar puntos de entrada y parámetros ocultos.
 
 📝 **Pruebas**
 
@@ -251,7 +255,7 @@ Comprender como se forman las peticiones y respuestas de la aplicación y buscar
 
 🌐 **Referencias**
 
-* [OWASP GitHub INFO-006](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.6_Identify_Application_Entry_Points_OTG-INFO-006.md)
+* [OWASP GitHub INFO-06](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/01-Information_Gathering/06-Identify_Application_Entry_Points.md)
 
 ### INFO-007 Mapas de rutas de ejecución a través de la aplicación
 
