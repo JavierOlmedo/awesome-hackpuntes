@@ -70,7 +70,7 @@ https://binsearch.info/?q=[DOMAIN]
 
 🎯 **Objetivo**
 
-Buscar información sobre el servidor web, principalmente intentar conocer la versión y tipo para buscar posibles vulnerabilidades y exploits.
+Buscar información sobre la versión y tipo del servidor web para buscar posibles vulnerabilidades y exploits.
 
 📝 **Pruebas**
 
@@ -79,7 +79,6 @@ Buscar información sobre el servidor web, principalmente intentar conocer la ve
 * [ ] Observar las cookies.
 * [ ] Lanzar **Wappalyzer**.
 * [ ] Lanzar **Whatweb**.
-* [ ] Lanzar **Nmap**.
 * [ ] Lanzar **Netcraft**.
 
 **Wappalyzer**
@@ -92,16 +91,6 @@ wappalyzer [URL] --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWe
 
 ```text
 whatweb --aggression 4 --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4135.1 Safari/537.36" --proxy "127.0.0.1:8080" --url-prefix "https://" [DOMAIN]
-```
-
-**Nmap**
-
-```text
-nmap -p- --open -T2 -v -oA ports [DOMAIN]
-```
-
-```text
-nmap -sC -sV -T2 -v -oA services -p[PORTS] [DOMAIN]
 ```
 
 **Netcraft**
@@ -123,8 +112,10 @@ Buscar archivos o directorios que puedan contener información interesante o sen
 📝 **Pruebas**
 
 * [ ] Comprobar el archivo `robots.txt`.
-* [ ] Fuzz de directorios y archivos conocidos.
 * [ ] Observar el tag HTML `META`.
+* [ ] Lanzar crawl con Burp Suite.
+* [ ] Lanzar **gobuster** con directorios conocidos.
+* [ ] Lanzar **wfuzz** con ficheros conocidos.
 
 **Wget**
 
@@ -138,31 +129,95 @@ wget [URL]/robots.txt
 curl -O [URL]/robots.txt
 ```
 
+**Gobuster**
+
+```text
+gobuster -w "/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt" -t 23 dir -u "[URL]" -o directories.txt
+```
+
+```text
+gobuster -w "/usr/share/wordlists/dirb/common.txt" -t 23 -x php,txt,html dir -u "[URL]" -o common_files.txt
+```
+
+**Wfuzz**
+
+```text
+wfuzz -c -t 23 -w "/usr/share/wordlists/dirb/common.txt" -z "php,txt,html" -u "[URL]FUZZ"
+```
+
 🌐 **Referencias**
 
-* [OWASP GitHub INFO-003](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.3_Review_Webserver_Metafiles_for_Information_Leakage_OTG-INFO-003.md)
+* [OWASP GitHub INFO-03](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/01-Information_Gathering/03-Review_Webserver_Metafiles_for_Information_Leakage.md)
 
-### INFO-004 Enumeración de aplicaciones en el servidor web
+### INFO-04 Enumeración de aplicaciones en el servidor web
 
 🎯 **Objetivo**
 
-Enumerar las aplicaciones dentro del alcance de la auditoría y presentes en el mismo servidor \(Host compartido\), descubrimiento de puertos abiertos, servicios, subdominios o frameworks utilizados.
+Enumerar las aplicaciones dentro del alcance de la auditoria y presentes en el mismo servidor \(Host compartido\), descubrimiento de puertos abiertos, servicios, subdominios o frameworks utilizados.
 
 📝 **Pruebas**
 
-* [ ] Utilizar BING con el filtro `IP:`.
-* [ ] Enumeración de subdominios.
+* [ ] Utilizar el motor de búsqueda **bing** con el filtro `IP:`.
+* [ ] Comprobar en `http://ipv4info.com`.
+* [ ] Lanzar **Nmap**.
+* [ ] Lanzar **Wfuzz**.
+* [ ] Lanzar **Assetfinder**.
+* [ ] Lanzar **Amass**.
+* [ ] Lanzar **Sublist3r**.
+
+**Bing**
 
 ```text
-[PENDIENTE]
+https://www.bing.com/search?q=IP%3A[IP]
 ```
 
-* [ ] Comprobar en `http://ipv4info.com`.
-* [ ] Lanzar Nmap.
+**IPv4info**
+
+```text
+http://ipv4info.com/search/[DOMAIN]
+```
+
+**Nmap**
+
+```text
+nmap -p- --open -T2 -v -oA ports [DOMAIN]
+```
+
+```text
+nmap -sC -sV -T2 -v -oA services -p[PORTS] [DOMAIN]
+```
+
+**Wfuzz**
+
+```text
+wfuzz -c -t 23 -w "/usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-20000.txt" -H "Host: FUZZ.[DOMAIN]" -u "[URL]"
+```
+
+**Assetfinder**
+
+```text
+assetfinder --subs-only [DOMAIN] | tee -a assetfinder.txt
+```
+
+**Amass**
+
+```text
+amass enum -passive -d [DOMAIN] -o amass-pasive.txt
+```
+
+```text
+amass enum -brute -d [DOMAIN] -o amass-brute.txt
+```
+
+**Sublist3r**
+
+```text
+python sublist3r.py -d [DOMAIN] -v -o sublister.txt
+```
 
 🌐 **Referencias**
 
-* [OWASP GitHub INFO-004](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.4_Enumerate_Applications_on_Webserver_OTG-INFO-004.md)
+* [OWASP GitHub INFO-04](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/01-Information_Gathering/04-Enumerate_Applications_on_Webserver.md)
 
 ### INFO-005 Fugas de información sensible en metadatos y comentarios
 
