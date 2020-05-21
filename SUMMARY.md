@@ -34,6 +34,7 @@
   * [OWASP: Testing guide checklist](owasp-en/owasp-testing-guide-checklist.md)
 * [OWASP - ES](owasp-es/README.md)
   * [\[INFO\] RECOPILACIÓN DE INFORMACIÓN](owasp-es/info-recopilacion-de-informacion.md)
+  * [\[CONFIG\] GESTIÓN DE CONFIGURACIÓN E IMPLEMENTACIÓN](owasp-es/config-gestion-de-configuracion-e-implementacion.md)
   * [OWASP: Guía de pruebas](owasp-es/owasp-comprobacion-pruebas.md)
 * [Tools and commands](tools/README.md)
   * [Gobuster](tools/gobuster.md)
