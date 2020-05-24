@@ -1,66 +1,24 @@
+---
+description: >-
+  Buscar información sobre el servidor y fallos de configuración e
+  implementación que puedan suponer un riesgo para la organización.
+---
+
 # \[CONFIG\] GESTIÓN DE CONFIGURACIÓN E IMPLEMENTACIÓN
-
-
 
 ### CONFIG-01 Configuración de infraestructura/red
 
 🎯 **Objetivo**
 
-Buscar información sensible sobre la aplicación, sistema u organización que pueda estar expuesta tanto directamente \(en el sitio web de la organización\) o indirectamente \(sitio web de un tercero\).
+**Comprender** el mapa del servidor y entender cómo puede afectar a la seguridad de la aplicación.
 
 📝 **Pruebas**
 
-* [ ] Buscar información sobre la aplicación en Google, Bing, GitHub, Shodan, Censys, Pastebin, Hunter, LinkedIn, Facebook y Twitter.
-* [ ] Comprobar fugas de información en leaks.
-* [ ] Lanzar **waybackurls**.
-* [ ] Comprobar emails en **hunter.io**.
-* [ ] Comprobar dominio en **shodan.io**.
-* [ ] Comprobar dominio en **binsearch.info**.
-
-**Google**
-
-```text
-site:[DOMAIN]
-cache:[DOMAIN]
-filetype:[EXTENSION]
-inurl:[DORK]
-intext:[DORK]
-inbody:[DORK]
-intitle:[DORK]
-```
-
-**Archive**
-
-```text
-https://web.archive.org/web/*/[DOMAIN]/*
-```
-
-```text
-waybackurls [DOMAIN] | tee -a [DOMAIN].txt
-```
-
-**Hunter.io**
-
-```text
-https://hunter.io/search/[DOMAIN]
-```
-
-**Shodan.io**
-
-```text
-https://www.shodan.io/search?query=[DOMAIN]
-```
-
-**Binsearch.info**
-
-```text
-https://binsearch.info/?q=[DOMAIN]
-```
+* [ ] Partiendo de las pruebas obtenidas en INFO-10, identificar posibles vulnerabilidades o fallos de configuración que puedan existir en toda la arquitectura de la aplicación.
 
 🌐 **Referencias**
 
-* [OWASP GitHub INFO-01](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/01-Information_Gathering/01-Conduct_Search_Engine_Discovery_Reconnaissance_for_Information_Leakage.md)
-* [Google Hacking Database/](https://www.exploit-db.com/google-hacking-database/)
+* [OWASP GitHub CONFIG-01](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/01-Test_Network_Infrastructure_Configuration.md)
 
 ### CONFIG-02 Configuración de la plataforma de la aplicación
 
@@ -70,12 +28,19 @@ Buscar información sobre la versión y tipo del servidor web para buscar posibl
 
 📝 **Pruebas**
 
-* [ ] Navegar por la aplicación y observar cabeceras.
+* [ ] Comprobar las cabeceras de seguridad devueltas por el servidor de la aplicación:
+  * [HTTP Strict Transport Security \(HSTS\)](https://hackpuntes.com/cabeceras-de-seguridad-http/#HSTS)
+  * [X-XSS-Protection](https://hackpuntes.com/cabeceras-de-seguridad-http/#xss)
+  * [X-Content-Type-Options](https://hackpuntes.com/cabeceras-de-seguridad-http/#content)
+  * [X-Frame-Options](https://hackpuntes.com/cabeceras-de-seguridad-http/#frame)
+  * [Content-Security-Policy](https://hackpuntes.com/cabeceras-de-seguridad-http/#security)
+  * [Public Key Pinning Extension for HTTP](https://hackpuntes.com/cabeceras-de-seguridad-http/#pinning)
+  * [X-Permitted-Cross-Domain-Policies](https://hackpuntes.com/cabeceras-de-seguridad-http/#cross)
+  * [Referrer-Policy](https://hackpuntes.com/cabeceras-de-seguridad-http/#referer)
+  * [Expect-CT](https://hackpuntes.com/cabeceras-de-seguridad-http/#expect)
+  * [Feature-Policy](https://hackpuntes.com/cabeceras-de-seguridad-http/#feature)
 * [ ] Analizar el código HTML.
 * [ ] Observar las cookies.
-* [ ] Lanzar **Wappalyzer**.
-* [ ] Lanzar **Whatweb**.
-* [ ] Lanzar **Netcraft**.
 
 **Wappalyzer**
 
@@ -97,7 +62,7 @@ https://sitereport.netcraft.com/?url=[URL]
 
 🌐 **Referencias**
 
-* [OWASP GitHub INFO-02](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/01-Information_Gathering/02-Fingerprint_Web_Server.md)
+* [OWASP GitHub CONFIG-02](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/02-Test_Application_Platform_Configuration.md)
 
 ### CONFIG-03 Fugas de información sensible en el manejo de extensiones de archivos
 
