@@ -233,7 +233,7 @@ Buscar fugas de información en comentarios HTML y metadatos de archivos subidos
 
 **Burp Suite**
 
-![](../.gitbook/assets/info-05_001.png)
+![Exportar comentarios desde Burp Suite](../.gitbook/assets/info-05_001.png)
 
 🌐 **Referencias**
 
@@ -252,12 +252,24 @@ Comprender como se forman las peticiones y respuestas de la aplicación, buscar 
 * [ ] Conocer los parámetros que usa la aplicación y con que fin son usados.
 * [ ] Identificar que peticiones POST pueden ser cambiadas por GET \(longitud de respuesta similar\).
 * [ ] Buscar formularios u otros posibles puntos de entrada para posteriormente buscar vulnerabilidades XSS o SQLi.
+* [ ] Exportar las URL y parámetros desde **Burp Suite**  `Target -> Site map -> Engagement tools -> Analyze target`.
+* [ ] Lanzar **Arjun** con las URL y parámetros obtenidos de Burp Suite.
+
+**Burp Suite**
+
+![Exportar URL y par&#xE1;metros desde Burp Suite](../.gitbook/assets/info-06_001.png)
+
+**Arjun**
+
+```text
+python3 arjun.py --url urls.txt --get -t 23 -o arjun.json
+```
 
 🌐 **Referencias**
 
 * [OWASP GitHub INFO-06](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/01-Information_Gathering/06-Identify_Application_Entry_Points.md)
 
-### INFO-007 Mapas de rutas de ejecución a través de la aplicación
+### INFO-07 Mapas de rutas de ejecución a través de la aplicación
 
 🎯 **Objetivo**
 
@@ -265,13 +277,13 @@ Crear un mapa de la aplicación y entender los flujos de trabajo.
 
 📝 **Pruebas**
 
-* [ ] Pasar la aplicación por Burp y navegar por ella.
+* [ ] Pasar la aplicación a través de Burp Suite. En la pestaña `Target -> Site map`se creará el mapa de la aplicación.
 
 🌐 **Referencias**
 
-* [OWASP GitHub INFO-007](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.7_Map_Execution_Paths_Through_Application_OTG-INFO-007.md)
+* [OWASP GitHub INFO-07](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/01-Information_Gathering/07-Map_Execution_Paths_Through_Application.md)
 
-### INFO-008 Fingerprinting del framework de la aplicación web
+### INFO-08 Fingerprinting del framework de la aplicación web
 
 🎯 **Objetivo**
 
@@ -279,45 +291,52 @@ Conocer los distintos frameworks usados por la aplicación.
 
 📝 **Pruebas**
 
-* [ ] Analizar las cabeceras de respuesta del servidor de la aplicación, cookies, extensiones de los archivos, errores o comentarios en el HTML para identificar posibles frameworks utilizados en su desarrollo.
+* [ ] Analizar las cabeceras de respuesta del servidor de la aplicación, cookies, extensiones de los archivos, errores o comentarios en el HTML para identificar posibles frameworks utilizados en su desarrollo \(Wordpress, JQuery, CKEditor, Vue.js, Joomla, Drupal, etc\).
+* [ ] Lanzar **WPScan**.
+
+**WPScan**
+
+```text
+python3 arjun.py --url urls.txt --get -t 23 -o arjun.json
+```
 
 🌐 **Referencias**
 
-* [OWASP GitHub INFO-008](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.8_Fingerprint_Web_Application_Framework_OTG-INFO-008.md)
+* [OWASP GitHub INFO-08](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework.md)
 
-### INFO-009 Fingerprinting de la aplicación web
+### INFO-09 Fingerprinting de la aplicación web
 
-🎯 **Objetivo**
-
-Identificar las versiones de los frameworks, servidor web, tecnologías o librerías, para determinar como la aplicación puede verse afectada por vulnerabilidades conocidas.
-
-📝 **Pruebas**
-
-* [ ] Analizar las cabeceras y cookies.
-* [ ] Revisar código fuente HTML.
-* [ ] Revisar el archivo `robots.txt`.
-* [ ] Lanzar WPScan o Joomscan \(si usa este framework\)
-* [ ] Usar `https://builtwith.com/detailed/[TARGET]`.
+⚠️ **\[ESTA PRUEBA HA SIDO INCLUIDA EN INFO-08\]** ⚠️
 
 🌐 **Referencias**
 
-* [OWASP GitHub INFO-009](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.9_Fingerprint_Web_Application_OTG-INFO-009.md)
+* [OWASP GitHub INFO-09](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/01-Information_Gathering/09-Fingerprint_Web_Application.md)
 
-### INFO-010 Mapa de arquitectura de la aplicación
+### INFO-10 Mapa de arquitectura de la aplicación
 
 🎯 **Objetivo**
 
-Conocer la infraestructura de la aplicación.
+Conocer la infraestructura de la aplicación para identificar si existe un WAF, Firewall, Balanceador, etc.
 
 📝 **Pruebas**
 
-* [ ] Buscar información referente a si existe un único servidor o más de uno.
-* [ ] Conocer si existe un Balanceador, WAR, Firewall, etc.
-* [ ] Cambiar las peticiones entre HTTP 1.0 y HTTP 1.1 con y sin host o intentando forzar errores.
+* [ ] Buscar información referente a si existe un único servidor o más de uno \(ejemplo los utilizados por Amazon para servir la información en función desde el país que se visite la aplicación, dando lugar a que un dominio pueda resolver dos IPs distintas\). Esto se puede comprobar en el punto INFO-04 mediante la herramienta online **IPv4Info**.
+* [ ] Cambiar las peticiones entre **HTTP 1.0** y **HTTP 1.1**, con y sin cabecera **HOST** o intentando forzar errores \(por ejemplo con caracteres chinos o emojis\).
 * [ ] En HTTP 1.0 se pueden hacer peticiones sin host, podemos obtener información en las cabeceras de respuestas.
-* [ ] Lanzar Whatwaff
+* [ ] Lanzar **WhatWaf**.
+* [ ] Plugin para Burp Suite: [WAFDetect](https://github.com/portswigger/waf-detect).
+
+**IPv4Info**
+
+![Ejemplo de dos IPs asociadas a un dominio en la herramienta IPv4Info](../.gitbook/assets/info-10_001.png)
+
+**WhatWaf**
+
+```text
+whatwaf -u [URL] --ra --force-ssl -t 23 --csv whatwaf.csv
+```
 
 🌐 **Referencias**
 
-* [OWASP GitHub INFO-010](https://github.com/OWASP/wstg/blob/master/document/4_Web_Application_Security_Testing/4.2_Information_Gathering/4.2.10_Map_Application_Architecture_OTG-INFO-010.md)
+* [OWASP GitHub INFO-10](https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/01-Information_Gathering/10-Map_Application_Architecture.md)
 
