@@ -39,4 +39,5 @@
 | [CVE-2019-15092](https://nvd.nist.gov/vuln/detail/CVE-2019-15092) | [CWE-74 ](https://cwe.mitre.org/data/definitions/74.html) | 7.3 HIGH | 6.0 MEDIUM | [✔️](https://www.exploit-db.com/exploits/47303) |
 | [CVE-2019-19031](https://nvd.nist.gov/vuln/detail/CVE-2019-19031) | [CWE-91 ](https://cwe.mitre.org/data/definitions/91.html) | 8.1 HIGH | 5.5 MEDIUM | [✔️](https://www.exploit-db.com/exploits/47945) |
 | [CVE-2019-19032](https://nvd.nist.gov/vuln/detail/CVE-2019-19032) | [CWE-91 ](https://cwe.mitre.org/data/definitions/91.html) | 8.1 HIGH | 5.5 MEDIUM | [✔️](https://www.exploit-db.com/exploits/47974) |
+|  |  |  |  |  |
 
